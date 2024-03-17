@@ -1,0 +1,31 @@
+.nav {
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
+  width: var(--max-width);
+  z-index: 2;
+}
+
+@media (max-width: 700px) {
+  .nav {
+    display: flex;
+    flex-shrink: 1;
+    flex-direction: column;
+    margin-bottom: 10px;
+    max-width: 320px;
+    text-align: center;
+    z-index: 1;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 1200px) {
+  .nav {
+    display: flex;
+    flex-shrink: 1;
+    flex-direction: column;
+    margin-bottom: 10px;
+    max-width: 320px;
+    text-align: center;
+    z-index: 1;
+  }
+}
