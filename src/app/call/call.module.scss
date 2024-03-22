@@ -3,12 +3,11 @@
   flex-direction: column;
   margin-bottom: 20px;
   gap: 10px;
+  max-width: 300px;
   input {
-    padding: 10px;
-    background-color: #f1f1f1;
-    border: 1px solid rgba(var(--card-border-rgb), 0.15);
-    border-radius: 12px;
-    font-size: 16px;
+    background-color: rgba(238, 240, 241, 0.5);
+    border: 1px solid rgba(172, 175, 176, 0.3);
+
     outline: none;
     color: #000;
   }
@@ -21,7 +20,7 @@
     padding: 10px 20px;
     border: none;
     border-radius: 12px;
-    background-color: #cacaca;
+    background-color: #d7dcdd;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -29,7 +28,7 @@
     text-align: center;
 
     &:hover {
-      background-color: #91c4eb;
+      background-color: #cee0f0;
     }
   }
   .message {
