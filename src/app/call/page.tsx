@@ -7,7 +7,6 @@ import { useForm } from "react-hook-form";
 import {
   Button,
   Checkbox,
-  FormControl,
   FormControlLabel,
   TextField,
   Typography,
@@ -23,7 +22,7 @@ export default function Call() {
     mode: "onBlur",
   });
 
-  const onSubmitData = async (data) => {
+  const onSubmitData = async (data: any) => {
     try {
       const response = await axios.post(
         `https://65e7001353d564627a8d9655.mockapi.io/User`,
@@ -49,6 +48,7 @@ export default function Call() {
       <TextField
         label="Ваше имя"
         variant="outlined"
+        margin="dense"
         sx={{ borderRadius: 12 }}
         {...register("name", {
           required: true,
@@ -60,6 +60,7 @@ export default function Call() {
         variant="outlined"
         type="number"
         inputMode="numeric"
+        margin="dense"
         {...register("phoneNumber", {
           required: true,
           minLength: 11,
@@ -70,6 +71,14 @@ export default function Call() {
           <p className={styles.message}>Неправильно набран номер</p>
         )}
       </div>
+      <TextField
+        label={`Причина обращения(необязательно)`}
+        multiline
+        rows={2}
+        margin="dense"
+        style={{ backgroundColor: "rgba(238, 240, 241, 0.5)" }}
+        {...register("reason", {})}
+      />
       <FormControlLabel
         required
         control={<Checkbox />}

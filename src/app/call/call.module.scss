@@ -2,22 +2,23 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
-  gap: 10px;
+  // gap: 10px;
   max-width: 300px;
   input {
     background-color: rgba(238, 240, 241, 0.5);
     border: 1px solid rgba(172, 175, 176, 0.3);
-
     outline: none;
     color: #000;
   }
+
   input[type="number"]::-webkit-inner-spin-button,
   input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
   }
+
   button {
-    padding: 10px 20px;
+    pad: 10px;
     border: none;
     border-radius: 12px;
     background-color: #d7dcdd;
@@ -35,5 +36,6 @@
     color: #f96f65;
     padding-left: 5px;
     font-size: 13px;
+    justify-content: center;
   }
 }
