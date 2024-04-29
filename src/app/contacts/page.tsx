@@ -1,4 +1,5 @@
 import React from "react";
+import YandexMap from "../components/map/YandexMap";
 
 const Contacts = () => {
   return (
@@ -10,6 +11,7 @@ const Contacts = () => {
       >
         vk
       </a>
+      <YandexMap />
     </div>
   );
 };

@@ -5,8 +5,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <p>
-        Максим
-        <span> +7 914-999-99-99</span>
+        Максим <span>+7 914-364-04-04</span>
       </p>
       <h1>404 Service</h1>
     </header>
