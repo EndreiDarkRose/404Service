@@ -20,8 +20,9 @@
   button {
     pad: 10px;
     border: none;
-    border-radius: 12px;
-    background-color: #d7dcdd;
+    border: 1px solid rgba(var(--card-border-rgb), 0.4);
+    border-radius: var(--border-radius);
+    background: rgba(var(--card-rgb), 0.1);
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;

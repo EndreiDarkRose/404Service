@@ -12,6 +12,9 @@
     transition: background-color 0.3s ease;
     height: 50px;
     text-align: center;
+    border: 1px solid rgba(var(--card-border-rgb), 0.4);
+    border-radius: var(--border-radius);
+    background: rgba(var(--card-rgb), 0.15);
 
     &:hover {
       background-color: #cee0f0;

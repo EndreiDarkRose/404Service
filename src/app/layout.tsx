@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "./components/header/page";
+import Header from "./components/header/Header";
 
-import Center from "./components/center/page";
-import Info from "./components/info/page";
+import Center from "./components/center/Center";
+import Info from "./components/info/Info";
 import styles from "./page.module.scss";
 
 const inter = Inter({ subsets: ["cyrillic"] });

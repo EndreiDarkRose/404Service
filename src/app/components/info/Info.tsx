@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./info.module.scss";
 import Link from "next/link";
-import InfoLink from "../InfoLink/page";
+import InfoLink from "../InfoLink/InfoLink";
 const Info = () => {
   const info = [
     {
