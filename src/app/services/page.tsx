@@ -7,6 +7,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 import { servicesList } from "./serviceList";
+import RepairPricing from "../components/RepairPricing/RepairPricing";
 
 const Services = () => {
   const [expanded, setExpanded] = React.useState<string | false>(false);
@@ -15,8 +16,11 @@ const Services = () => {
     (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
       setExpanded(isExpanded ? panel : false);
     };
+
   return (
     <div className={styles.servicesAccordion}>
+      <RepairPricing />
+
       {servicesList.map((item, index) => (
         <div key={index}>
           <Accordion

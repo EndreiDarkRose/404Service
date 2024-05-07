@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./info.module.scss";
 import Link from "next/link";
-import InfoLink from "../InfoLink/InfoLink";
+import InfoLink from "../infoLink/InfoLink";
 const Info = () => {
   const info = [
     {
@@ -24,11 +24,6 @@ const Info = () => {
       title: "Контакты",
       description: "А так же наши соц. сети",
     },
-    // {
-    //   link: "orders",
-    //   title: "Выполенные заказы",
-    //   description: "Посмотрите ранее выполенные работы мастером",
-    // },
   ];
   return (
     <nav className={styles.nav}>

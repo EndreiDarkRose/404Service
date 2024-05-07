@@ -7,7 +7,7 @@ const YandexMap = () => {
   return (
     <YMaps>
       <Map
-        width={1000}
+        width="100%"
         defaultState={{
           center: [52.028380828855774, 113.5011511534117],
           zoom: 16,
