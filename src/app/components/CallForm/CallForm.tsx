@@ -18,7 +18,7 @@ function CallForm({ setFormSubmitted }) {
   const onSubmitData = async (data) => {
     try {
       const response = await axios.post(
-        `https://65e7001353d564627a8d9655.mockapi.io/User`,
+        `http://127.0.0.1:3000/api/v1/orders/create`,
         data
       );
       console.log("Успешно отправлено:", response.data);
