@@ -18,8 +18,13 @@ enum LoadingStatus {
   Rejected = "rejected",
 }
 
-export interface PriceListState {
-  priceList: JSON[];
+type JSONData = Array<{
+  category: string;
+  service: Array<{ title: string; price: string }>;
+}>;
+
+interface PriceListState {
+  priceList: JSONData;
   loading: "pending" | "fulfilled" | "rejected";
 }
 
@@ -29,7 +34,7 @@ const initialState: PriceListState = {
 };
 
 export const priceListSlice = createSlice({
-  name: "counter",
+  name: "priceList",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -39,7 +44,7 @@ export const priceListSlice = createSlice({
       })
       .addCase(
         fetchPriceList.fulfilled,
-        (state, action: PayloadAction<JSON[]>) => {
+        (state, action: PayloadAction<JSONData>) => {
           state.loading = LoadingStatus.Fulfilled;
           state.priceList = action.payload;
         }

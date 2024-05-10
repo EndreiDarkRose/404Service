@@ -1,11 +1,10 @@
-interface Service {
-  title: string;
-  price: string;
-}
-
-interface ServicesCategory {
+export type JSONData = Array<{
   category: string;
-  service: Service[];
-}
+  service: Array<{ title: string; price: string }>;
+}>;
 
-export type ServicesList = ServicesCategory[];
+export interface FormData {
+  name: string;
+  phone_number: string;
+  description?: string;
+}

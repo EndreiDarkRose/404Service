@@ -1,31 +1,41 @@
 import React from "react";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import axios from "axios";
 import { Button, Checkbox, FormControlLabel, TextField } from "@mui/material";
-
+import { FormData } from "@/types/serviceListInterface";
 import styles from "./call.module.scss";
 
-function CallForm({ setFormSubmitted }) {
+type CallFormProps = {
+  setFormSubmitted: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+function CallForm({ setFormSubmitted }: CallFormProps) {
   const {
     register,
     formState: { errors },
     handleSubmit,
     reset,
-  } = useForm({
+  } = useForm<FormData>({
     mode: "onBlur",
   });
 
-  const onSubmitData = async (data) => {
+  const onSubmitData: SubmitHandler<FormData> = async (data) => {
+    const fromResponse = `name=${data.name}&phone_number=${data.phone_number}&description=${data.description}`;
     try {
       const response = await axios.post(
         `http://127.0.0.1:3000/api/v1/orders/create`,
-        data
+        fromResponse,
+        {
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiJ9.NDA0.HxeuhZe-IYGPIZfse-9fMorZXq_UdKZg8iLixTempVA",
+          },
+        }
       );
-      console.log("Успешно отправлено:", response.data);
       reset();
       setFormSubmitted(true);
     } catch (error) {
-      console.error("Ошибка при отправке:", error);
+      alert(`Ошибка при отправке:${error}`);
     }
   };
 
@@ -56,14 +66,14 @@ function CallForm({ setFormSubmitted }) {
         type="text"
         inputMode="numeric"
         margin="dense"
-        {...register("phoneNumber", {
+        {...register("phone_number", {
           required: true,
           pattern: /^[0-9]*$/,
           minLength: 11,
         })}
       />
       <div>
-        {errors?.phoneNumber && (
+        {errors?.phone_number && (
           <p className={styles.message}>Неправильно набран номер</p>
         )}
       </div>
@@ -73,7 +83,7 @@ function CallForm({ setFormSubmitted }) {
         rows={2}
         margin="dense"
         style={{ backgroundColor: "rgba(238, 240, 241, 0.5)" }}
-        {...register("reason", {})}
+        {...register("description", {})}
       />
       <FormControlLabel
         required
@@ -84,7 +94,7 @@ function CallForm({ setFormSubmitted }) {
             Согласен(а) на обработку{" "}
             <a
               className="personalData"
-              href="/policy"
+              href="https://docs.google.com/document/d/1hdpmw0DCc6S5OjUyZHKDREjRq0a9sDk31N1-qmIAEM8/edit"
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: "blue" }}

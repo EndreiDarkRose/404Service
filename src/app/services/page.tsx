@@ -5,17 +5,18 @@ import Accordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { fetchPriceList } from "@/store/slicePriceList";
-import { useAppSelector, useAppDispatch } from "@/store/hooks";
+import { fetchPriceList } from "@/redux/priceListSlicer/slicePriceList";
+import { useAppSelector, useAppDispatch } from "@/redux/hooks";
 import RepairPricing from "../components/RepairPricing/RepairPricing";
-import { ServicesList } from "@/types/serviceListInterface";
-import { CircularProgress } from "@mui/material";
-import dynamic from "next/dynamic";
+import { JSONData } from "@/types/serviceListInterface";
 
 const Services = () => {
   const [expanded, setExpanded] = React.useState<string | false>(false);
   const loading = useAppSelector((state) => state.priceList.loading);
-  const servicesList = useAppSelector((state) => state.priceList.priceList);
+
+  const servicesList: JSONData = useAppSelector(
+    (state) => state.priceList.priceList
+  );
 
   const dispatch = useAppDispatch();
 

@@ -6,7 +6,7 @@ import Header from "./components/header/Header";
 import Center from "./components/center/Center";
 import Info from "./components/info/Info";
 import styles from "./page.module.scss";
-import { StoreProvider } from "@/store/StoreProvide";
+import { StoreProvider } from "@/redux/StoreProvide";
 import { Suspense } from "react";
 import Loading from "./loading";
 
