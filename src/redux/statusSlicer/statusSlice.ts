@@ -6,7 +6,7 @@ export const fetchStatus = createAsyncThunk(
   "status/fetchStatus",
   async (queryStatus: string) => {
     const response = await axios.post(
-      "http://127.0.0.1:3000/api/v1/orders/search",
+      "http://127.0.0.1:4000/api/v1/orders/search",
       queryStatus
     );
     return response.data;
