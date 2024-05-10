@@ -9,7 +9,7 @@
   z-index: 2;
   font-weight: bold;
 
-  h1 {
+  .logo {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,7 +34,7 @@
     }
 
     p,
-    h1 {
+    .logo {
       display: flex;
       justify-content: center;
       position: fixed;
@@ -57,7 +57,7 @@
       backdrop-filter: blur(24px);
     }
 
-    h1 {
+    .logo {
       align-items: flex-end;
       pointer-events: none;
       inset: auto 0 0;

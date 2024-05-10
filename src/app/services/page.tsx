@@ -1,26 +1,36 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./services.module.scss";
 import Accordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-
-import { servicesList } from "./serviceList";
+import { fetchPriceList } from "@/store/slicePriceList";
+import { useAppSelector, useAppDispatch } from "@/store/hooks";
 import RepairPricing from "../components/RepairPricing/RepairPricing";
+import { ServicesList } from "@/types/serviceListInterface";
+import { CircularProgress } from "@mui/material";
+import dynamic from "next/dynamic";
 
 const Services = () => {
   const [expanded, setExpanded] = React.useState<string | false>(false);
+  const loading = useAppSelector((state) => state.priceList.loading);
+  const servicesList = useAppSelector((state) => state.priceList.priceList);
+
+  const dispatch = useAppDispatch();
 
   const handleChange =
     (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
       setExpanded(isExpanded ? panel : false);
     };
 
+  useEffect(() => {
+    dispatch(fetchPriceList());
+  }, []);
+
   return (
     <div className={styles.servicesAccordion}>
       <RepairPricing />
-
       {servicesList.map((item, index) => (
         <div key={index}>
           <Accordion

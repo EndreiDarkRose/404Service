@@ -6,6 +6,9 @@ import Header from "./components/header/Header";
 import Center from "./components/center/Center";
 import Info from "./components/info/Info";
 import styles from "./page.module.scss";
+import { StoreProvider } from "@/store/StoreProvide";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 const inter = Inter({ subsets: ["cyrillic"] });
 
@@ -20,15 +23,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru">
-      <body className={inter.className}>
-        <main className={styles.main}>
-          <Header></Header>
-          <Center></Center>
-          {children}
-          <Info></Info>
-        </main>
-      </body>
-    </html>
+    <StoreProvider>
+      <html lang="ru">
+        <body className={inter.className}>
+          <main className={styles.main}>
+            <Header />
+            <Center />
+            <Suspense fallback={<Loading />}>{children}</Suspense>
+            <Info />
+          </main>
+        </body>
+      </html>
+    </StoreProvider>
   );
 }
