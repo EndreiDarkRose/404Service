@@ -5,9 +5,7 @@ import axios from "axios";
 export const fetchPriceList = createAsyncThunk(
   "priceList/fetchPriceList",
   async () => {
-    const response = await axios.get(
-      "https://663cb71917145c4d8c375f97.mockapi.io/pricelist"
-    );
+    const response = await axios.get("http://127.0.0.1:3000/api/v1/services");
     return response.data;
   }
 );
