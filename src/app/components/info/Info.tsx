@@ -12,7 +12,7 @@ const Info = () => {
     {
       link: "call",
       title: "Заказать звонок",
-      description: "Оператор свяжится с вами по телефону",
+      description: "Оператор свяжется с вами по телефону",
     },
     {
       link: "status",

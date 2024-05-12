@@ -1,6 +1,9 @@
 import styles from "./InfoLink.module.scss";
-
-const InfoLink = ({ title, description }) => {
+interface InfoLinkProps {
+  title: string;
+  description: string;
+}
+const InfoLink = ({ title, description }: InfoLinkProps) => {
   return (
     <div className={styles.card}>
       <h2>
