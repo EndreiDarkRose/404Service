@@ -27,7 +27,7 @@ const Services = () => {
 
   useEffect(() => {
     dispatch(fetchPriceList());
-  }, []);
+  }, [dispatch]);
 
   return loading === "fulfilled" ? (
     <div className={styles.servicesAccordion}>
