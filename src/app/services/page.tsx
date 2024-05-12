@@ -29,7 +29,7 @@ const Services = () => {
     dispatch(fetchPriceList());
   }, []);
 
-  return (
+  return loading === "fulfilled" ? (
     <div className={styles.servicesAccordion}>
       <RepairPricing />
       {servicesList.map((item, index) => (
@@ -61,6 +61,11 @@ const Services = () => {
         офертой.
       </p>
     </div>
+  ) : (
+    <p className={styles.errorMessage}>
+      Не удалось получить список услуг, повторите попытку позже или обратитесь
+      по контактному номеру.
+    </p>
   );
 };
 

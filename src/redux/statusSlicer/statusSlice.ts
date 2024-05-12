@@ -20,12 +20,12 @@ enum LoadingStatus {
 
 interface PriceListState {
   status: { status: string };
-  loading: "fulfilled" | "rejected";
+  loading: "pending" | "fulfilled" | "rejected";
 }
 
 const initialState: PriceListState = {
   status: { status: "" },
-  loading: "fulfilled",
+  loading: "pending",
 };
 
 export const statusSlice = createSlice({
@@ -34,6 +34,9 @@ export const statusSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
+      .addCase(fetchStatus.pending, (state) => {
+        state.loading = LoadingStatus.Pending;
+      })
       .addCase(fetchStatus.fulfilled, (state, action) => {
         state.status = action.payload;
         state.loading = LoadingStatus.Fulfilled;

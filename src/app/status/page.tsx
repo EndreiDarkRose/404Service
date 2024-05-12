@@ -21,11 +21,19 @@ export default function Status() {
     const queryStatus = `search_key=${data.status}`;
     dispatch(fetchStatus(queryStatus));
   };
+
   return (
     <div>
-      {loading === "rejected" && <p>Ошибка загрузки статуса заказа.</p>}
-      {loading === "fulfilled" && <p>{status.status}</p>}
-      {loading !== "rejected" && loading !== "fulfilled" && (
+      {loading === "rejected" && (
+        <p className={styles.message}>
+          Не удалось получить статус заказа, попробуйте позже или обратитесь по
+          контактному номеру
+        </p>
+      )}
+      {loading === "fulfilled" && (
+        <p className={styles.message}>{status.status}</p>
+      )}
+      {loading === "pending" && (
         <form
           className={styles.orderStatusChecker}
           onSubmit={handleSubmit(submitStatusCode)}
