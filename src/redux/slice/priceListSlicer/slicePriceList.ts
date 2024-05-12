@@ -26,14 +26,14 @@ interface PriceListState {
   loading: "pending" | "fulfilled" | "rejected";
 }
 
-const initialState: PriceListState = {
+export const initialState: PriceListState = {
   priceList: [],
   loading: "pending",
 };
 
 export const priceListSlice = createSlice({
   name: "priceList",
-  initialState,
+  initialState: initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder

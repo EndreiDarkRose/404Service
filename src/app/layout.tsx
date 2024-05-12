@@ -23,17 +23,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <StoreProvider>
-      <html lang="ru">
-        <body className={inter.className}>
-          <main className={styles.main}>
-            <Header />
-            <Center />
+    <html lang="ru">
+      <body className={inter.className}>
+        <main className={styles.main}>
+          <Header />
+          <Center />
+          <StoreProvider>
             <Suspense fallback={<Loading />}>{children}</Suspense>
-            <Info />
-          </main>
-        </body>
-      </html>
-    </StoreProvider>
+          </StoreProvider>
+          <Info />
+        </main>
+      </body>
+    </html>
   );
 }

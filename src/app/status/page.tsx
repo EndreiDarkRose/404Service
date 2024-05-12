@@ -2,7 +2,7 @@
 import { Button, TextField } from "@mui/material";
 import { useAppSelector, useAppDispatch } from "@/redux/hooks";
 import styles from "./status.module.scss";
-import { fetchStatus } from "@/redux/statusSlicer/statusSlice";
+import { fetchStatus } from "@/redux/slice/statusSlicer/statusSlice";
 import { SubmitHandler, useForm } from "react-hook-form";
 
 export default function Status() {

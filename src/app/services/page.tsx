@@ -5,7 +5,7 @@ import Accordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { fetchPriceList } from "@/redux/priceListSlicer/slicePriceList";
+import { fetchPriceList } from "@/redux/slice/priceListSlicer/slicePriceList";
 import { useAppSelector, useAppDispatch } from "@/redux/hooks";
 import RepairPricing from "../components/RepairPricing/RepairPricing";
 import { JSONData } from "@/types/serviceListInterface";
