@@ -1,14 +1,28 @@
-.main {
+.container {
   display: flex;
+  justify-content: center;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6rem;
-  min-height: 100vh;
-
-  @media (max-width: 700px) {
-    padding: 0rem;
-    padding-top: 100px;
-    justify-content: flex-start;
+  .title {
+    font-weight: 600;
+    font-size: large;
+    padding: 10px;
+  }
+  .list {
+    list-style: none;
+    .item {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      margin: 5px 10px;
+      border: 1px solid rgba(var(--card-border-rgb), 0.1);
+      border-radius: var(--border-radius);
+      background: rgba(var(--card-rgb), 0.1);
+      .description {
+        padding-left: 10px;
+        span {
+          font-weight: 600;
+        }
+      }
+    }
   }
 }

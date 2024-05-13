@@ -8,62 +8,63 @@ import HandshakeIcon from "@mui/icons-material/Handshake";
 import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import MoreTimeIcon from "@mui/icons-material/MoreTime";
-const page = () => {
+import styles from "./page.module.scss";
+
+const Main = () => {
   return (
-    <div>
-      <p>Компьютерный сервис 404 - это:</p>
-      <ul>
-        <li>
+    <div className={styles.container}>
+      <ul className={styles.list}>
+        {/* <li className={styles.item}>
           <GradeIcon />
-          <p>
-            <span>Мы входим в топ 3 </span>сервисных центров Читы
+          <p className={styles.description}>
+            <span>Мы входим в топ 3 </span>сервисных центров Читы.
           </p>
         </li>
-        <li>
+        <li className={styles.item}>
           <VerifiedIcon />
-          <p>
+          <p className={styles.description}>
             <span>Квалифицированные инженеры.</span> Мы не кучка студентов, наши
-            инженеры регулярно проходят сертификацию
+            инженеры регулярно проходят сертификацию.
           </p>
-        </li>
-        <li>
+        </li> */}
+        <li className={styles.item}>
           <CurrencyRubleIcon />
-          <p>
-            <span>Адекватные цены.</span>Мы не предлагаем &quot;бесплатный
+          <p className={styles.description}>
+            <span>Адекватные цены. </span>Мы не предлагаем &quot;бесплатный
             сыр&quot;, но и не завышаем цены на ремонт.
           </p>
         </li>
-        <li>
+        <li className={styles.item}>
           <AddCardIcon />
-          <p>
-            <span>Никаких скрытых платежей.</span>Четкое ценообразование на
-            услуги и комплектующие. Работем по прайс-листу
+          <p className={styles.description}>
+            <span>Никаких скрытых платежей. </span>Четкое ценообразование на
+            услуги и комплектующие. Работаем по прайс-листу.
           </p>
         </li>
-        <li>
+        <li className={styles.item}>
           <HandshakeIcon />
-          <p>
-            <span>Без вымеленных работ.</span>Мы не навязаем лишних услуг
+          <p className={styles.description}>
+            <span>Без вымышленных работ. </span>Мы не навязываем лишних услуг.
           </p>
         </li>
-        <li>
+        <li className={styles.item}>
           <VerifiedUserIcon />
-          <p>
-            <span>Гарантия на работы.</span>На все свои услуги мы даем гарантию
+          <p className={styles.description}>
+            <span>Гарантия на работы. </span>На все свои услуги мы даем гарантию
             от 3-х месяцев.
           </p>
         </li>
-        <li>
+        <li className={styles.item}>
           <LocalShippingIcon />
-          <p>
-            <span>Бесплатная доставка в сервис-центр.</span>Мы заберем Вашу
+          <p className={styles.description}>
+            <span>Бесплатная доставка в сервис-центр. </span>Мы заберем Вашу
             малогабаритную технику в ремонт совершенно бесплатно.
           </p>
         </li>
-        <li>
+        <li className={styles.item}>
           <MoreTimeIcon />
-          <p>
-            <span>Срочный ремонт.</span>Мы принимаем технику в срочный ремонт.
+          <p className={styles.description}>
+            <span>Срочный ремонт. </span>Мы принимаем технику в срочный ремонт.
           </p>
         </li>
       </ul>
@@ -71,4 +72,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Main;

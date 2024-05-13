@@ -9,6 +9,7 @@ import { fetchPriceList } from "@/redux/slice/priceListSlicer/slicePriceList";
 import { useAppSelector, useAppDispatch } from "@/redux/hooks";
 import RepairPricing from "../components/RepairPricing/RepairPricing";
 import { JSONData } from "@/types/serviceListInterface";
+import Loading from "../loading";
 
 const Services = () => {
   const [expanded, setExpanded] = React.useState<string | false>(false);
@@ -28,6 +29,15 @@ const Services = () => {
   useEffect(() => {
     dispatch(fetchPriceList());
   }, [dispatch]);
+
+  // if (loading === "rejected") {
+  //   return (
+  //     <p className={styles.errorMessage}>
+  //       Не удалось получить список услуг, повторите попытку позже или обратитесь
+  //       по контактному номеру.
+  //     </p>
+  //   );
+  // }
 
   return loading === "fulfilled" ? (
     <div className={styles.servicesAccordion}>
@@ -62,10 +72,12 @@ const Services = () => {
       </p>
     </div>
   ) : (
-    <p className={styles.errorMessage}>
-      Не удалось получить список услуг, повторите попытку позже или обратитесь
-      по контактному номеру.
-    </p>
+    loading === "rejected" && (
+      <p className={styles.errorMessage}>
+        Не удалось получить список услуг, повторите попытку позже или обратитесь
+        по контактному номеру.
+      </p>
+    )
   );
 };
 
