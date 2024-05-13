@@ -30,54 +30,49 @@ const Services = () => {
     dispatch(fetchPriceList());
   }, [dispatch]);
 
-  // if (loading === "rejected") {
-  //   return (
-  //     <p className={styles.errorMessage}>
-  //       Не удалось получить список услуг, повторите попытку позже или обратитесь
-  //       по контактному номеру.
-  //     </p>
-  //   );
-  // }
-
-  return loading === "fulfilled" ? (
-    <div className={styles.servicesAccordion}>
-      <RepairPricing />
-      {servicesList.map((item, index) => (
-        <div key={index}>
-          <Accordion
-            className={styles.accordion}
-            expanded={expanded === `panel${index}`}
-            onChange={handleChange(`panel${index}`)}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls={`panel${index}bh-content`}
-              id={`panel${index}bh-header`}
-            >
-              <p>{item.category}</p>
-            </AccordionSummary>
-            <AccordionDetails>
-              {item.service.map((service, serviceIndex) => (
-                <p className={styles.details} key={serviceIndex}>
-                  {service.title} - {service.price}
-                </p>
-              ))}
-            </AccordionDetails>
-          </Accordion>
+  return (
+    <>
+      {loading === "pending" && <Loading />}
+      {loading === "fulfilled" && (
+        <div className={styles.servicesAccordion}>
+          <RepairPricing />
+          {servicesList.map((item, index) => (
+            <div key={index}>
+              <Accordion
+                className={styles.accordion}
+                expanded={expanded === `panel${index}`}
+                onChange={handleChange(`panel${index}`)}
+              >
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls={`panel${index}bh-content`}
+                  id={`panel${index}bh-header`}
+                >
+                  <p>{item.category}</p>
+                </AccordionSummary>
+                <AccordionDetails>
+                  {item.service.map((service, serviceIndex) => (
+                    <p className={styles.details} key={serviceIndex}>
+                      {service.title} - {service.price}
+                    </p>
+                  ))}
+                </AccordionDetails>
+              </Accordion>
+            </div>
+          ))}
+          <p className={styles.disclaimerText}>
+            Все указанные цены являются ознакомительными. Не является публичной
+            офертой.
+          </p>
         </div>
-      ))}
-      <p className={styles.disclaimerText}>
-        Все указанные цены являются ознакомительными. Не является публичной
-        офертой.
-      </p>
-    </div>
-  ) : (
-    loading === "rejected" && (
-      <p className={styles.errorMessage}>
-        Не удалось получить список услуг, повторите попытку позже или обратитесь
-        по контактному номеру.
-      </p>
-    )
+      )}
+      {loading === "rejected" && (
+        <p className={styles.errorMessage}>
+          Не удалось получить список услуг, повторите попытку позже или
+          обратитесь по контактному номеру.
+        </p>
+      )}
+    </>
   );
 };
 
