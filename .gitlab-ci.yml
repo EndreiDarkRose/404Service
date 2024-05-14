@@ -1,0 +1,17 @@
+stages:
+  - deploy
+
+variables:
+  DEPLOY_DIR: "/var/404service/404service"
+  DEPLOY_SCRIPT_DIR: "/var/404service/404Deploy"
+
+deploy:
+  stage: deploy
+  script:
+    - sudo git config --global --add safe.directory $DEPLOY_DIR
+    - cd $DEPLOY_DIR
+    - sudo git pull
+    - cd $DEPLOY_SCRIPT_DIR
+    - sudo docker-compose restart nextjs
+  tags:
+    - 404Service

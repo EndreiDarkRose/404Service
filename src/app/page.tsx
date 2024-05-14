@@ -13,14 +13,17 @@ import styles from "./page.module.scss";
 const Main = () => {
   return (
     <div className={styles.container}>
+      <h1 className={styles.serviceTitle}>
+        Компьютерный сервис 404 в Чите - это:
+      </h1>
       <ul className={styles.list}>
-        {/* <li className={styles.item}>
+        <li className={styles.item}>
           <GradeIcon />
           <p className={styles.description}>
             <span>Мы входим в топ 3 </span>сервисных центров Читы.
           </p>
         </li>
-        <li className={styles.item}>
+        {/* <li className={styles.item}>
           <VerifiedIcon />
           <p className={styles.description}>
             <span>Квалифицированные инженеры.</span> Мы не кучка студентов, наши
