@@ -23,7 +23,7 @@ function CallForm({ setFormSubmitted }: CallFormProps) {
     const fromResponse = `name=${data.name}&phone_number=${data.phone_number}&description=${data.description}`;
     try {
       const response = await axios.post(
-        `http://404service/api/v1/orders/create`,
+        `https://404service.ru/api/v1/orders/create`,
         fromResponse,
         {
           headers: {
