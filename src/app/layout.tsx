@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "./components/header/Header";
-import Center from "./components/center/Center";
-import Info from "./components/info/Info";
+import Header from "@/components/header/Header";
+import Center from "@/components/center/Center";
+import Info from "@/components/info/Info";
 import styles from "./layout.module.scss";
 import { StoreProvider } from "@/redux/StoreProvide";
 import { Suspense } from "react";

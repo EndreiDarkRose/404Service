@@ -1,5 +1,5 @@
 import React from "react";
-import YandexMap from "../components/map/YandexMap";
+import YandexMap from "@/components/map/YandexMap";
 import Image from "next/image";
 import styles from "./contacts.module.scss";
 
