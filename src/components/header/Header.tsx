@@ -6,7 +6,9 @@ import Link from "next/link";
 const Header = () => {
   return (
     <header className={styles.header}>
-      <p>+7 914-364-04-04</p>
+      <Link href="tel:79143640404">
+        <p>+7 914-364-04-04</p>
+      </Link>
       <div className={styles.logo}>
         <Link passHref href="/">
           <div style={{ position: "relative", width: "300px", height: "80px" }}>
