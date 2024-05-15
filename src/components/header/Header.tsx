@@ -7,7 +7,9 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <Link href="tel:79143640404">
-        <p>+7 914-364-04-04</p>
+        <p>
+          +<span className={styles.underLine}>7 914-364-04-04</span>
+        </p>
       </Link>
       <div className={styles.logo}>
         <Link passHref href="/">

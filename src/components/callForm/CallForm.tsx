@@ -68,7 +68,7 @@ function CallForm({ setFormSubmitted }: CallFormProps) {
         margin="dense"
         {...register("phone_number", {
           required: true,
-          pattern: /^\+?[0-9]*$/,
+          pattern: /^\+?[0-9]{11,}$/,
           minLength: 11,
         })}
       />

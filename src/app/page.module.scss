@@ -2,7 +2,10 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-
+  .serviceTitle {
+    font-size: 20px;
+    margin: 5px 10px;
+  }
   .title {
     font-weight: 600;
     font-size: large;

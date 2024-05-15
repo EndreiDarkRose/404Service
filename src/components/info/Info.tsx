@@ -17,7 +17,7 @@ const Info = () => {
     {
       link: "status",
       title: "Узнать статус заказа",
-      description: "И их ценах",
+      description: "По номеру заказа",
     },
     {
       link: "contacts",
