@@ -1,6 +1,6 @@
 # Computer Service 404
 
-[404service,ru](https://404service,ru/)
+[404service.ru](https://404service.ru/)
 
 ## Основные функции
 
